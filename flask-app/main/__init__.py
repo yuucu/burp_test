@@ -1,9 +1,12 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy # 追加
+from flask_sqlalchemy import SQLAlchemy
+from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
-app.config.from_object('main.config') # 追加
+bootstrap = Bootstrap(app)
 
-db = SQLAlchemy(app) # 追加
+app.config.from_object('main.config')
+
+db = SQLAlchemy(app)
 
 import main.views
